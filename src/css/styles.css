@@ -7,8 +7,6 @@
     height: 522px
 }
 
-
-
 .shadow-md {
     box-shadow: 0rem .25rem .75rem rgba(0, 0, 0, .075);
 }
@@ -23,6 +21,10 @@
 
 .shadow-sm-light-inset {
     box-shadow: inset 0 .25rem .575em rgba(0, 58, 121, .175);
+}
+
+.shadow-sm-light-inset-subtle {
+    box-shadow: inset 0 .25rem .45em rgba(0, 58, 121, .175);
 }
 
 .blue-background {
