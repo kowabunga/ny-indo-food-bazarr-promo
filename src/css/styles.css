@@ -2,6 +2,13 @@
     width: 10rem
 }
 
+.card-size {
+    max-width: 24rem;
+    height: 522px
+}
+
+
+
 .shadow-md {
     box-shadow: 0rem .25rem .75rem rgba(0, 0, 0, .075);
 }
@@ -55,20 +62,35 @@
 }
 
 .left-in {
-    animation: leftin 1s ease-in;
+    animation: leftin 1s ease-in-out;
 }
 
 .right-in {
-    animation: rightin 1s ease-in;
+    animation: rightin 1s ease-in-out;
 }
 
 .top-down {
-    animation: topdown 1s ease-in;
+    animation: topdown 1s ease-in-out;
 }
 
 .bottom-up {
-    animation: bottomup 1s ease-in;
+    animation: bottomup 1s ease-in-out;
 }
+
+.fade-in {
+    animation: fadein 1s ease-in-out;
+}
+
+.opacity-none {
+    opacity: 0;
+}
+
+.card-image-height {
+    height: 559px;
+    width: 550px;
+}
+
+
 
 @keyframes jumpy {
     0% {
@@ -123,6 +145,16 @@
     0% {
         opacity: 0;
         transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
     }
 
     100% {
