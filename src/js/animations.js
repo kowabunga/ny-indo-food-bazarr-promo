@@ -1,6 +1,9 @@
 const joinUsNow = document.querySelector('#join-us-now');
 const map = document.querySelector('#map');
 const eventTime = document.querySelector('#event-time');
+const menuItems = Array.from(document.getElementsByClassName('menu-item'));
+
+console.log(menuItems);
 
 // Fade in and out sections based on scroll position
 const vh = window.innerHeight;
@@ -41,6 +44,17 @@ window.addEventListener('scroll', () => {
     eventTime.classList.remove('right-in');
     eventTime.classList.add('opacity-none');
   }
+
+  menuItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.bottom <= vh + vh * 0.15) {
+      console.log('yay');
+      console.log(item);
+      item.classList.add('bottom-up');
+      item.classList.remove('opacity-none');
+    }
+  });
 });
 
 window.addEventListener('onload', () => {
@@ -58,4 +72,13 @@ window.addEventListener('onload', () => {
     eventTime.classList.add('right-in');
     eventTime.classList.remove('opacity-none');
   }
+
+  menuItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.bottom >= vh) {
+      item.classList.add('opacity-none');
+      item.classList.remove('bottom-up');
+    }
+  });
 });
