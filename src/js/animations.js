@@ -29,22 +29,6 @@ window.addEventListener('scroll', () => {
     eventTime.classList.remove('opacity-none');
   }
 
-  //   Remove fade so it can be applied again!
-  if (joinUsNowLocation.top > vh) {
-    joinUsNow.classList.remove('top-down');
-    joinUsNow.classList.add('opacity-none');
-  }
-
-  if (mapLocation.top > vh) {
-    map.classList.remove('fade-in');
-    map.classList.add('opacity-none');
-  }
-
-  if (eventTimeLocation.top > vh) {
-    eventTime.classList.remove('right-in');
-    eventTime.classList.add('opacity-none');
-  }
-
   menuItems.forEach(item => {
     const itemLocation = item.getBoundingClientRect();
 
@@ -55,9 +39,38 @@ window.addEventListener('scroll', () => {
       item.classList.remove('opacity-none');
     }
   });
+  console.log(joinUsNowLocation.top);
+  //   Remove fade so it can be applied again!
+  if (joinUsNowLocation.top > vh || joinUsNowLocation.bottom <= 0) {
+    joinUsNow.classList.remove('top-down');
+    joinUsNow.classList.add('opacity-none');
+  }
+
+  if (mapLocation.top > vh || mapLocation.bottom <= 0) {
+    map.classList.remove('fade-in');
+    map.classList.add('opacity-none');
+  }
+
+  if (eventTimeLocation.top > vh || eventTimeLocation <= 0) {
+    eventTime.classList.remove('right-in');
+    eventTime.classList.add('opacity-none');
+  }
+
+  menuItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.top > vh || itemLocation.bottom <= 0) {
+      item.classList.remove('bottom-up');
+      item.classList.add('opacity-none');
+    }
+  });
 });
 
 window.addEventListener('onload', () => {
+  const joinUsNowLocation = joinUsNow.getBoundingClientRect();
+  const mapLocation = map.getBoundingClientRect();
+  const eventTimeLocation = eventTime.getBoundingClientRect();
+
   if (joinUsNowLocation.bottom >= vh) {
     joinUsNow.classList.add('top-down');
     joinUsNow.classList.remove('opacity-none');
