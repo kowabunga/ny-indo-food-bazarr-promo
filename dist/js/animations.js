@@ -16,22 +16,22 @@ window.addEventListener('scroll', () => {
   const footerLocation = footer.getBoundingClientRect();
 
   //   Add fade in animation when bottom of element passes bottom of window viewport (minus a little bit)
-  if (joinUsNowLocation.bottom <= vh + vh * 0.15) {
+  if (joinUsNowLocation.top < vh) {
     joinUsNow.classList.add('top-down');
     joinUsNow.classList.remove('opacity-none');
   }
 
-  if (mapLocation.bottom <= vh + vh * 0.15) {
+  if (mapLocation.top < vh) {
     map.classList.add('fade-in');
     map.classList.remove('opacity-none');
   }
 
-  if (eventTimeLocation.bottom <= vh + vh * 0.1) {
+  if (eventTimeLocation.top < vh) {
     eventTime.classList.add('right-in');
     eventTime.classList.remove('opacity-none');
   }
 
-  if (menuRowLocation.bottom <= vh + vh * 0.1) {
+  if (menuRowLocation.top < vh) {
     menuRow.classList.add('left-in');
     menuRow.classList.remove('opacity-none');
   }
@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
   menuItems.forEach(item => {
     const itemLocation = item.getBoundingClientRect();
 
-    if (itemLocation.bottom <= vh + vh * 0.15) {
+    if (itemLocation.top < vh) {
       item.classList.add('bottom-up');
       item.classList.remove('opacity-none');
     }
