@@ -80,10 +80,10 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  if (footerLocation.top > vh || footerLocation.bottom <= 0) {
-    footer.classList.remove('bottom-up');
-    footer.classList.add('opacity-none');
-  }
+  // if (footerLocation.top > vh || footerLocation.bottom <= 0) {
+  //   footer.classList.remove('bottom-up');
+  //   footer.classList.add('opacity-none');
+  // }
 });
 
 window.addEventListener('onload', () => {
