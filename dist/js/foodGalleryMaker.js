@@ -6,6 +6,7 @@ const food = [
     ingredients: 'Sticky rice, pork, mushroom, salted egg, dried shrimp.',
     itemUrl: 'Bakcang.jpg',
     itemName: 'Bakcang',
+    itemEnglishName: 'Sticky Rice Dumpling',
   },
   {
     description:
@@ -29,6 +30,7 @@ const food = [
       'Rice cake, cabbage, bean sprout, green bean, cucumber, boiled egg, shrimp cracker, peanut sauce.',
     itemUrl: 'Gado Gado.jpeg',
     itemName: 'Gado Gado',
+    itemEnglishName: 'Indonesian Salad with Peanut Sauce',
   },
   {
     description:
@@ -50,6 +52,7 @@ const food = [
     ingredients: 'Glutinous rice flour, palm sugar, shredded coconut.',
     itemUrl: 'klepon.jpeg',
     itemName: 'klepon',
+    itemEnglishName: 'Rice Flour Ball stuffed with Palm Sugar',
   },
   {
     description:
@@ -65,6 +68,7 @@ const food = [
     ingredients: 'Sticky rice, shredded chicken',
     itemUrl: 'Lemper Ayam.jpeg',
     itemName: 'Lemper Ayam',
+    itemEnglishName: 'Sticky Rice with Shredded Chicken',
   },
   {
     description:
@@ -80,6 +84,7 @@ const food = [
     ingredients: 'White rice, crispy chicken, cucumber, tomato, chili sauce.',
     itemUrl: 'Nasi Ayam Kremes.jpeg',
     itemName: 'Nasi Ayam Kremes',
+    itemEnglishName: 'Indonesian Crispy Chicken with Rice',
   },
   {
     description:
@@ -103,6 +108,7 @@ const food = [
       'White rice, steamed vegetables, shredded coconut, corn fritter, chili paste, cracker.',
     itemUrl: 'Nasi Urap Urap.jpeg',
     itemName: 'Nasi Urap Urap',
+    itemEnglishName: 'Javanese Style Salad',
   },
   {
     description: 'stir fry with green chili',
@@ -110,6 +116,7 @@ const food = [
       'Tempe / Soybeans , Green chili , shallot , garlic , palm sugar , sweet soy sauce , bay leaves , galangal & salt Sauteed all together but before that you need to fried till brown the tempe first. This dish is healthy and vegetarian dish.',
     itemUrl: 'oseng tempe lombok ijo.jpg',
     itemName: 'oseng tempe lombok ijo',
+    itemEnglishName: 'Stir Fry Tempeh with Green Chili',
   },
   {
     description:
@@ -117,6 +124,7 @@ const food = [
     ingredients: 'Chicken, rice vermicelli, peas, carrot, dried shrimp',
     itemUrl: 'Pastel.jpg',
     itemName: 'Pastel',
+    itemEnglishName: 'Indonesian style Empanadas',
   },
   {
     description:
@@ -124,6 +132,7 @@ const food = [
     ingredients: '',
     itemUrl: 'rawon.jpg',
     itemName: 'rawon',
+    itemEnglishName: 'Beef Stew with Black Soup',
   },
   {
     description:
@@ -132,6 +141,7 @@ const food = [
       'Meat (beef, lamb or goat), coconut milk, chilli, ginger, galangal, turmeric, lemongrass, garlic, shallot,',
     itemUrl: 'rendang sapi.jpg',
     itemName: 'rendang sapi',
+    itemEnglishName: 'Beef Rendang',
   },
   {
     description:
@@ -145,6 +155,7 @@ const food = [
     ingredients: 'fresh fruit, fried tofu, brown sugar, peanut sauce',
     itemUrl: 'Rujak Manis.jpeg',
     itemName: 'Rujak Manis',
+    itemEnglishName: 'Fruit Salad with Sweet Peanut Sauce',
   },
   {
     description:
@@ -153,6 +164,7 @@ const food = [
       'Ingr: Rice cake, fried tofu, steamed vegetables, beef tendon, shrimp paste, peanut sauce.',
     itemUrl: 'Rujak Petis Surabaya.jpeg',
     itemName: 'Rujak Petis Surabaya',
+    itemEnglishName: 'Mixed Vegetables Salad',
   },
   {
     description:
@@ -161,6 +173,7 @@ const food = [
       'Inggrediants :  Baby Clam , Red Chili , Garlic , Shallot , Lemongrass , Ginger , Galangal , Turmeric , Tamarind Juice , Limes Leaves , Palm Sugar , Salt , Sweet Soy Sauce & Coriender.',
     itemUrl: 'sate kerang.jpg',
     itemName: 'sate kerang',
+    itemEnglishName: 'Baby Clam Skewer',
   },
   {
     description:
@@ -192,14 +205,16 @@ const food = [
       'Yellow rice, fired tempeh, shredded egg, chicken,cucumber, fried shredded coconut.',
     itemUrl: 'Yellow Rish Dish Nasi Kuning.jpeg',
     itemName: 'Yellow Rish Dish Nasi Kuning',
+    itemEnglishName: 'Yellow Rice Dish',
   },
   {
     description:
       'A soup dish that is popular in Indonesia that a lot of areas have their own version of it. We make this soup in Surabaya style',
     ingredients:
       'White rice, chicken, bean sprout, cabbage, potato, celery, crushed shrimp cracker, chili paste.',
-    itemUrl: 'Yellow Spicy Chicken Soup Soto Ayam.jpeg',
-    itemName: 'Yellow Spicy Chicken Soup Soto Ayam',
+    itemUrl: 'Soto Ayam.jpeg',
+    itemName: 'Soto Ayam',
+    itemEnglishName: 'Yellow Spicy Chicken Soup',
   },
   {
     description:
@@ -208,14 +223,16 @@ const food = [
       'Rice cake, chicken, beef, egg, bamboo shoot, coconut milk, spices.',
     itemUrl: 'Lontong Cap Go Meh.jpeg',
     itemName: 'Lontong Cap Go Meh',
+    itemEnglishName: 'Rice Cake Noodle Soup',
   },
   {
     description:
       'Traditional snack consistt of glutinous black rice, rice flour congee, tapioca pearl, sweet ball glutinous flour served with coconut milk and brown sugar.',
     ingredients:
       'Ingr: Rice flour, tapioca pearl, glutinous rice flour, glutinous black rice, coconut milk, pandan leaf, brown sugar.',
-    itemUrl: 'Madura Porridge',
-    itemName: 'Madura Porridge',
+    itemUrl: 'Bubur Madura',
+    itemName: 'Bubur Madura',
+    itemEnglishName: 'Madura Porridge',
   },
   {
     description:
@@ -224,6 +241,14 @@ const food = [
       'Rice cake, chayote, long green bean, tempeh tofu, bamboo shoot, coconut milk, spices.',
     itemUrl: 'lontong sayur.jpg',
     itemName: 'lontong sayur',
+  },
+  {
+    description:
+      'A spicy Indonesian grilled chicken that originated from Lombok island. After the grill process, the chicken will be covered with sweet and spicy sauce.',
+    ingredients: 'White rice, ayam taliwang, vegetables',
+    itemUrl: 'Nasi Ayam Taliwang.jpeg',
+    itemName: 'Nasi Ayam Taliw',
+    itemEnglishName: 'Spicy Grilled Chicken with Rice',
   },
 ];
 
@@ -237,7 +262,9 @@ food.forEach(item => {
     'm-3',
     'p-0',
     'menu-item',
-    'shadow-sm-blue'
+    'shadow-sm-blue',
+    'opacity-none',
+    'gallery-item'
   );
   const img = document.createElement('img');
 
@@ -247,23 +274,26 @@ food.forEach(item => {
 
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
+
   const h3 = document.createElement('h3');
   h3.classList.add('card-title', 'text-capitalize');
   h3.textContent = item.itemName;
 
   const h4 = document.createElement('h4');
-  h4.classList.add('card-subtitle', 'text-muted');
-  h4.textContent = 'hello';
+  if (item.itemEnglishName) {
+    h4.classList.add('card-subtitle', 'text-muted', 'lead');
+    h4.textContent = item.itemEnglishName;
+  }
 
   const cardText = document.createElement('div');
   cardText.classList.add('card-text');
   cardText.textContent = item.description;
 
   cardBody.append(h3);
-  cardBody.append(h4);
+  item.itemEnglishName && cardBody.append(h4);
+
   cardBody.append(document.createElement('hr'));
   cardBody.append(cardText);
-
   card.append(img);
   card.append(cardBody);
 

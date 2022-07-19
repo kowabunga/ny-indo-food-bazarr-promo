@@ -3,12 +3,16 @@ const map = document.querySelector('#map');
 const eventTime = document.querySelector('#event-time');
 const menuRow = document.querySelector('#menu-row');
 const menuItems = Array.from(document.getElementsByClassName('menu-item'));
+let galleryItems = [];
 const footer = document.querySelector('#footer');
-
 // Fade in and out sections based on scroll position
 const vh = window.innerHeight;
 
 window.addEventListener('scroll', () => {
+  if (galleryItems.length === 0) {
+    galleryItems = Array.from(document.getElementsByClassName('gallery-item'));
+  }
+
   const joinUsNowLocation = joinUsNow.getBoundingClientRect();
   const mapLocation = map.getBoundingClientRect();
   const eventTimeLocation = eventTime.getBoundingClientRect();
@@ -41,6 +45,15 @@ window.addEventListener('scroll', () => {
 
     if (itemLocation.top <= vh) {
       item.classList.add('bottom-up');
+      item.classList.remove('opacity-none');
+    }
+  });
+
+  galleryItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.top <= vh) {
+      item.classList.add('left-in');
       item.classList.remove('opacity-none');
     }
   });
@@ -80,6 +93,15 @@ window.addEventListener('scroll', () => {
     }
   });
 
+  galleryItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.top > vh || itemLocation.bottom <= 0) {
+      item.classList.remove('left-in');
+      item.classList.add('opacity-none');
+    }
+  });
+
   // if (footerLocation.top > vh || footerLocation.bottom <= 0) {
   //   footer.classList.remove('bottom-up');
   //   footer.classList.add('opacity-none');
@@ -90,6 +112,10 @@ window.addEventListener('onload', () => {
   const joinUsNowLocation = joinUsNow.getBoundingClientRect();
   const mapLocation = map.getBoundingClientRect();
   const eventTimeLocation = eventTime.getBoundingClientRect();
+
+  if (galleryItems.length === 0) {
+    galleryItems = Array.from(document.getElementsByClassName('gallery-item'));
+  }
 
   if (joinUsNowLocation.bottom >= vh) {
     joinUsNow.classList.add('top-down');
@@ -112,6 +138,15 @@ window.addEventListener('onload', () => {
     if (itemLocation.bottom >= vh) {
       item.classList.add('opacity-none');
       item.classList.remove('bottom-up');
+    }
+  });
+
+  galleryItems.forEach(item => {
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.top <= vh) {
+      item.classList.add('opacity-none');
+      item.classList.remove('left-in');
     }
   });
 });
