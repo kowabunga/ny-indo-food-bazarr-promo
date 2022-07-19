@@ -212,7 +212,7 @@ const food = [
       'A soup dish that is popular in Indonesia that a lot of areas have their own version of it. We make this soup in Surabaya style',
     ingredients:
       'White rice, chicken, bean sprout, cabbage, potato, celery, crushed shrimp cracker, chili paste.',
-    itemUrl: 'Soto Ayam.jpeg',
+    itemUrl: 'Yellow Spicy Chicken Soup Soto Ayam.jpeg',
     itemName: 'Soto Ayam',
     itemEnglishName: 'Yellow Spicy Chicken Soup',
   },
@@ -230,7 +230,7 @@ const food = [
       'Traditional snack consistt of glutinous black rice, rice flour congee, tapioca pearl, sweet ball glutinous flour served with coconut milk and brown sugar.',
     ingredients:
       'Ingr: Rice flour, tapioca pearl, glutinous rice flour, glutinous black rice, coconut milk, pandan leaf, brown sugar.',
-    itemUrl: 'Bubur Madura',
+    itemUrl: 'Bubur madura.jpg',
     itemName: 'Bubur Madura',
     itemEnglishName: 'Madura Porridge',
   },
