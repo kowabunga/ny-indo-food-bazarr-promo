@@ -27,6 +27,7 @@ const foodImageFileNames = [
   'urap urap.jpg',
   'Yellow Rish Dish Nasi Kuning.jpeg',
   'Yellow Spicy Chicken Soup Soto Ayam.jpeg',
+  'Lontong Cap Go Meh.jpeg',
 ];
 
 const foodImageNames = [
