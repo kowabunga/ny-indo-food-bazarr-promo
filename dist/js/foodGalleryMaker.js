@@ -50,7 +50,7 @@ const food = [
     description:
       'A traditional snack from Java made of glutinous rice flour stuffed with palm sugar and coated with shredded coconut.',
     ingredients: 'Glutinous rice flour, palm sugar, shredded coconut.',
-    itemUrl: 'klepon.jpeg',
+    itemUrl: 'Klepon.jpeg',
     itemName: 'klepon',
     itemEnglishName: 'Rice Flour Ball stuffed with Palm Sugar',
   },
