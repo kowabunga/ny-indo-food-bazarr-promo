@@ -78,6 +78,4 @@ foodImageFileNames.map((dish, idx) => {
   carouselImages.append(div);
 });
 
-console.log(carouselImages);
-
 carousel.append(carouselImages);
