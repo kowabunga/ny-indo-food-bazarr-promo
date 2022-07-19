@@ -7,6 +7,11 @@
     height: 522px
 }
 
+.gallery-card-size {
+    max-width: 24rem;
+    height: 650px;
+}
+
 .shadow-md {
     box-shadow: 0rem .25rem .75rem rgba(0, 0, 0, .075);
 }
@@ -89,6 +94,11 @@
 
 .card-image-height {
     height: 559px;
+    width: 550px;
+}
+
+.gallery-card-image-height {
+    height: 380px;
     width: 550px;
 }
 

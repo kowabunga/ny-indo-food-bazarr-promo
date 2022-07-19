@@ -233,30 +233,34 @@ food.forEach(item => {
   const card = document.createElement('div');
   card.classList.add(
     'card',
-    'card-size',
+    'gallery-card-size',
     'm-3',
     'p-0',
     'menu-item',
-    'opacity-none',
     'shadow-sm-blue'
   );
   const img = document.createElement('img');
 
   img.src = `./dist/images/food-images/${item.itemUrl}`;
-  img.classList.add('d-block', 'w-100');
+  img.classList.add('card-img-top', 'img-fluid', 'gallery-card-image-height');
   img.alt = `Image of a plate of ${item.itemName}`;
 
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
   const h3 = document.createElement('h3');
-  h3.classList.add('card-title');
+  h3.classList.add('card-title', 'text-capitalize');
   h3.textContent = item.itemName;
+
+  const h4 = document.createElement('h4');
+  h4.classList.add('card-subtitle', 'text-muted');
+  h4.textContent = 'hello';
 
   const cardText = document.createElement('div');
   cardText.classList.add('card-text');
   cardText.textContent = item.description;
 
   cardBody.append(h3);
+  cardBody.append(h4);
   cardBody.append(document.createElement('hr'));
   cardBody.append(cardText);
 
