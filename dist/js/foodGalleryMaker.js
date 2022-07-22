@@ -252,6 +252,7 @@ const food = [
   },
 ];
 
+// @TODO modify gallery maker to only create a few at a time... -> "view more" generates more each time
 const gallery = document.createDocumentFragment();
 
 food.forEach(item => {
