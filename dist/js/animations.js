@@ -2,7 +2,7 @@ const joinUsNow = document.querySelector('#join-us-now');
 const map = document.querySelector('#map');
 const eventTime = document.querySelector('#event-time');
 const menuRow = document.querySelector('#menu-row');
-const menuItems = Array.from(document.getElementsByClassName('menu-item'));
+const menuItems = Array.from(document.querySelectorAll('.menu-item'));
 let galleryItems = [];
 const footer = document.querySelector('#footer');
 // Fade in and out sections based on scroll position
@@ -10,7 +10,7 @@ const vh = window.innerHeight;
 
 window.addEventListener('scroll', () => {
   if (galleryItems.length === 0) {
-    galleryItems = Array.from(document.getElementsByClassName('gallery-item'));
+    galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
   }
 
   const joinUsNowLocation = joinUsNow.getBoundingClientRect();
@@ -114,7 +114,7 @@ window.addEventListener('onload', () => {
   const eventTimeLocation = eventTime.getBoundingClientRect();
 
   if (galleryItems.length === 0) {
-    galleryItems = Array.from(document.getElementsByClassName('gallery-item'));
+    galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
   }
 
   if (joinUsNowLocation.bottom >= vh) {
