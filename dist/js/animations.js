@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
   const joinUsNowLocation = joinUsNow.getBoundingClientRect();
   const mapLocation = map.getBoundingClientRect();
   const eventTimeLocation = eventTime.getBoundingClientRect();
-  const menuRowLocation = galleryRow.getBoundingClientRect();
+  const galleryRowLocation = galleryRow.getBoundingClientRect();
   const footerLocation = footer.getBoundingClientRect();
 
   //   Add fade in animation when bottom of element passes bottom of window viewport (minus a little bit)
@@ -40,7 +40,7 @@ window.addEventListener('scroll', () => {
     eventTime.classList.remove('opacity-none');
   }
 
-  if (menuRowLocation.top <= vh) {
+  if (galleryRowLocation.top <= vh) {
     galleryRow.classList.add('fade-in');
     galleryRow.classList.remove('opacity-none');
   }
