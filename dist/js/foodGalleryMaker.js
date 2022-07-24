@@ -326,7 +326,7 @@ function makeGallery() {
     const itemLocation = item.getBoundingClientRect();
 
     if (itemLocation.bottom >= vh || itemLocation.top <= vh) {
-      addAnimationDelay(item, galleryDelay, 'left-in');
+      addAnimationDelay(item, galleryDelay, 'fade-in');
       galleryDelay += 150;
     }
   }
