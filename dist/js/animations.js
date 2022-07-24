@@ -97,7 +97,7 @@ window.addEventListener('scroll', () => {
   });
 
   if (footerLocation.top <= vh) {
-    footer.classList.add('bottom-up');
+    footer.classList.add('top-down');
     footer.classList.remove('opacity-none');
   }
 });
