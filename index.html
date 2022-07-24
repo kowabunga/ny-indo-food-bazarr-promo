@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta description="Indonesian food made locally, fresh, and sold at the New York Food Bazaar."/>
+    <meta
+      description="Indonesian food made locally, fresh, and sold at the New York Food Bazaar."
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,30 +18,56 @@
     <title>New York Indonesian Food Bazaar</title>
   </head>
   <body>
-    <!-- @TODO Make it come in from the top! -->
-    <!-- <header class="shadow-sm">
-      <div class="mx-auto img-container-width">
-        <img
-          src="./dist/images//ny-indo-fb-logojpg.jpg"
-          alt="Logo for New York Indonesian Food Bazaar"
-          class="img-fluid"
-        />
-      </div>
-    </header> -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./dist/images/ny-indo-fb-logojpg.jpg"
+              alt="New York Indonesian Food Bazaar logo"
+              class="img-fluid"
+              width="50"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">On The Table</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <main class="mt-5">
       <!-- Intro/Carousel -->
-      <section class="container position-relative">
-        <div
-          class="row justify-content-center align-items-center gx-sm-5 r1-h min-vh-100"
-        >
-          <div class="col-12 col-lg-4 p-2 left-in" id="intro-text">
+      <section class="container position-relative my-5 py-5">
+        <div class="row justify-content-center align-items-center gx-sm-5 r1-h">
+          <div class="col-12 col-md-6 col-lg-4 p-2 left-in" id="intro-text">
             <h2 class="display-2">The Best of Indonesian Food</h2>
-            <h3 class="text-muted">Fresh - Just For You</h3>
+            <h3 class="text-muted">Discover a Taste of Home</h3>
             <p class="lead mt-4">
-              Join us for our next event, you'll love what you find.
+              Come join us for our next event. You've never felt more at home.
             </p>
           </div>
-          <div class="col-12 col-lg-8 top-down" id="carousel">
+          <!-- <div class="col-12 col-lg-8 top-down" id="carousel">
             <div
               id="foodExamplesCarousel"
               class="carousel slide"
@@ -47,38 +75,98 @@
             >
               <div class="carousel-inner">
             </div>
+          </div> -->
+          <div class="col-12 col-md-6 col-lg-5 top-down">
+            <img
+              src="./dist/images/svg/undraw_cooking_re_g99p.svg"
+              alt="Illustration of two people cooking food"
+              class="img-fluid max-w-50"
+            />
           </div>
         </div>
+      </section>
+      <section id="why-us">
         <div
-          class="display-5 d-flex justify-content-between bottom-up"
-          id="keep-reading"
+          class="d-flex flex-row flex-wrap justify-content-center justify-content-sm-evenly justify-content-lg-around bg-orange p-5 text-white why-us-min-height"
         >
-          Interested? Keep on reading.
-          <img src="./dist/images/arrow-down-solid.svg" alt="arrow down" class="icon-size-large">
-
+          <div
+            class="card bg-transparent border-0 why-us-card opacity-none"
+            style="width: 18rem"
+          >
+            <img
+              src="./dist/images/svg/undraw_grandma_re_rnv1.svg"
+              class="card-img-top why-us-img-height"
+              alt="Illustration of mother and grandmother embracing eachother"
+            />
+            <div class="card-body text-center">
+              <h5 class="big-lead">Relive the Memories</h5>
+              <p class="card-text">
+                Remember grandma's cooking? The excitement of going to your
+                grandmother's house for food?
+              </p>
+              <p class="card-text">You'll find that here.</p>
+            </div>
+          </div>
+          <div
+            class="card bg-transparent border-0 why-us-card opacity-none"
+            style="width: 18rem"
+          >
+            <img
+              src="./dist/images/svg/undraw_sweet_home_dkhr.svg"
+              class="card-img-top why-us-img-height"
+              alt="Illustration of mother and grandmother embracing eachother"
+            />
+            <div class="card-body text-center">
+              <h5 class="big-lead">Be at Home</h5>
+              <p class="card-text">
+                Relive the memories. Remember the good times and the laughs with
+                friends and family shared at home over the best food possible.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card bg-transparent border-0 why-us-card opacity-none"
+            style="width: 18rem"
+          >
+            <img
+              src="./dist/images/svg/undraw_exciting_news_re_y1iw.svg"
+              class="card-img-top why-us-img-height"
+              alt="Illustration of mother and grandmother embracing eachother"
+            />
+            <div class="card-body text-center">
+              <h5 class="big-lead">Be Happy</h5>
+              <p class="card-text">
+                Where good food can be found, good company and good times are
+                abound. Join us for undeniably great food and good times.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Where/When -->
-      <section class="mt-5 blue-background p-5 shadow-sm-light-inset">
+      <section class="p-5 shadow-sm-light-inset">
         <div class="container">
-          <div class="row justify-content-center align-items-center min-vh-100">
+          <div class="row justify-content-center align-items-center">
             <div class="opacity-none" id="join-us-now">
-              <h2 class="display-1 text-center text-capitalize text-light mb-5">
+              <h2 class="display-1 text-center text-capitalize mb-5">
                 Upcoming Events
               </h2>
-              <h3 class="display-5 text-center text-light mb-5">
-                Save the date and indulge in the best food Indonesian cuisine has to offer.
-              </h3>
+              <p class="lead text-center mb-5">
+                We hold monthly events where you can come and take part in
+                enjoying the best Indonesian food in New York City. <br />Join
+                us now at our next event and feel good.
+              </p>
             </div>
-            
+
             <!-- right-in -->
             <div class="col-12 col-lg-6 opacity-none" id="event-time">
-              <div class="card shadow-sm-light">
+              <div class="card shadow-sm-blue">
                 <div class="card-body">
                   <h2 class="display-4 text-center">August 27, 2022</h2>
                   <hr />
                   <p class="big-lead">
-                    Our next event will be on August 27<sup>th</sup> from 11:00am-5:00pm
+                    Our next event will be on August 27<sup>th</sup> from
+                    11:00am-5:00pm
                   </p>
                   <p class="fs-5">
                     Made locally, the food is fresh and delicious. You'll never
@@ -96,7 +184,7 @@
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
-                  class="map-size shadow-sm-light"
+                  class="map-size shadow-sm-blue"
                 ></iframe>
               </div>
             </div>
@@ -104,40 +192,59 @@
         </div>
       </section>
       <!-- Menu -->
-      <section class="py-5 container">
-          <div class="row opacity-none" id="menu-row">
-            <h2 class="display-3 text-center " >Gallery</h2>
-            <h3 class="lead text-center">Take a look at some of the dishes that we've offered. </h3>
-            <p class="text-center">You'll probably find these at our next event too!</p>
+      <section class="py-5 bg-orange">
+        <div class="container">
+          <div class="row opacity-none text-white" id="menu-row">
+            <h2 class="display-3 text-center">Gallery</h2>
+            <h3 class="lead text-center">
+              Take a look at some of the dishes that we've offered.
+            </h3>
+            <p class="text-center">
+              You'll probably find these at our next event too!
+            </p>
           </div>
-          <div class="row align-items-center justify-content-center p-md-4" id="gallery">
+          <div
+            class="row align-items-center justify-content-center p-md-4"
+            id="gallery"
+          ></div>
+          <div class="d-grid gap-2 col-6 col-md-3 col-lg-2 mx-auto">
+            <button class="btn btn-outline-light" id="show-more-gallery">
+              See More
+            </button>
+          </div>
         </div>
       </section>
     </main>
     <footer class="p-5 shadow-sm-light-inset-subtle opacity-none" id="footer">
-        <div class="row align-items-center justify-content-start">
-          <div class="col-12 col-md-4">
-            <img src="./dist/images//ny-indo-fb-logojpg.jpg" alt="New York Indonesian Food Bazaar Logo" class="img-fluid w-50 d" >
-          </div>
-          <div class="col-12 col-md-8">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-12 col-md-4">
-                <h4>New York Indonesian Food Bazaar</h4>
-                <p class="lead">Bringing high quality Indonesian food with the family-style cooking you love to New York City.</p>
-              </div>
-              <div class="col-12 col-md-8 lead">
-                
-                <address>
-                  87-04 Broadway
-                  <br/>
-                  Elmhurst, NY 11373
-                </address>
+      <div class="row align-items-center justify-content-start">
+        <div class="col-12 col-md-4">
+          <img
+            src="./dist/images//ny-indo-fb-logojpg.jpg"
+            alt="New York Indonesian Food Bazaar Logo"
+            class="img-fluid w-50 d"
+          />
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-md-4">
+              <h4>New York Indonesian Food Bazaar</h4>
+              <p class="lead">
+                Bringing high quality Indonesian food with the family-style
+                cooking you love to New York City.
+              </p>
+            </div>
+            <div class="col-12 col-md-8 lead">
+              <address>
+                87-04 Broadway
+                <br />
+                Elmhurst, NY 11373
+              </address>
 
-                <a href="tel:(347) 615-2003">(347) 615-2003</a>
-                <br/>
-                <a href="mailto:felincia_ang@yahoo.com">felincia_ang@yahoo.com</a>
-              </div>
-            </div>          
+              <a href="tel:(347) 615-2003">(347) 615-2003</a>
+              <br />
+              <a href="mailto:felincia_ang@yahoo.com">felincia_ang@yahoo.com</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -147,7 +254,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="./dist/js/animations.js"></script>
-    <script src="./dist/js/carouselMaker.js"></script>
+    <!-- <script src="./dist/js/carouselMaker.js"></script> -->
     <script src="./dist/js/foodGalleryMaker.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 const gallerySection = document.querySelector('#gallery');
+const showMoreButton = document.querySelector('#show-more-gallery');
 const food = [
   {
     description:
@@ -252,53 +253,88 @@ const food = [
   },
 ];
 
-// @TODO modify gallery maker to only create a few at a time... -> "view more" generates more each time
-const gallery = document.createDocumentFragment();
-
-food.forEach(item => {
-  const card = document.createElement('div');
-  card.classList.add(
-    'card',
-    'gallery-card-size',
-    'm-3',
-    'p-0',
-    'menu-item',
-    'shadow-sm-blue',
-    'opacity-none',
-    'gallery-item'
-  );
-  const img = document.createElement('img');
-
-  img.src = `./dist/images/food-images/${item.itemUrl}`;
-  img.classList.add('card-img-top', 'img-fluid', 'gallery-card-image-height');
-  img.alt = `Image of a plate of ${item.itemName}`;
-
-  const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
-
-  const h3 = document.createElement('h3');
-  h3.classList.add('card-title', 'text-capitalize');
-  h3.textContent = item.itemName;
-
-  const h4 = document.createElement('h4');
-  if (item.itemEnglishName) {
-    h4.classList.add('card-subtitle', 'text-muted', 'lead');
-    h4.textContent = item.itemEnglishName;
-  }
-
-  const cardText = document.createElement('div');
-  cardText.classList.add('card-text');
-  cardText.textContent = item.description;
-
-  cardBody.append(h3);
-  item.itemEnglishName && cardBody.append(h4);
-
-  cardBody.append(document.createElement('hr'));
-  cardBody.append(cardText);
-  card.append(img);
-  card.append(cardBody);
-
-  gallery.append(card);
+showMoreButton.addEventListener('click', function () {
+  makeGallery();
 });
 
-gallerySection.append(gallery);
+const gallery = document.createDocumentFragment();
+let start = 0,
+  end = 6;
+
+// On button press, call function
+function makeGallery() {
+  // Check current gallery delay. If greater than 750ms, return to 150ms (prevents animation from being *really* long at the end of it all)
+  if (galleryDelay >= 750) galleryDelay = 150;
+
+  for (let i = start; i < end; i++) {
+    const item = food[i];
+    const card = document.createElement('div');
+    card.classList.add(
+      'card',
+      'gallery-card-size',
+      'm-3',
+      'p-0',
+      'menu-item',
+      'shadow-sm-light',
+      'opacity-none',
+      'gallery-item',
+      'bg-off-white'
+    );
+    const img = document.createElement('img');
+
+    img.src = `./dist/images/food-images/${item.itemUrl}`;
+    img.classList.add('card-img-top', 'img-fluid', 'gallery-card-image-height');
+    img.alt = `Image of a plate of ${item.itemName}`;
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    const h3 = document.createElement('h3');
+    h3.classList.add('card-title', 'text-capitalize');
+    h3.textContent = item.itemName;
+
+    const h4 = document.createElement('h4');
+    if (item.itemEnglishName) {
+      h4.classList.add('card-subtitle', 'text-muted', 'lead');
+      h4.textContent = item.itemEnglishName;
+    }
+
+    const cardText = document.createElement('div');
+    cardText.classList.add('card-text');
+    cardText.textContent = item.description;
+
+    cardBody.append(h3);
+    item.itemEnglishName && cardBody.append(h4);
+
+    cardBody.append(document.createElement('hr'));
+    cardBody.append(cardText);
+    card.append(img);
+    card.append(cardBody);
+
+    gallery.append(card);
+  }
+
+  gallerySection.append(gallery);
+
+  start += 6;
+  end += 6;
+
+  galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+
+  for (let i = end; i <= galleryItems.length; i++) {
+    const item = galleryItems[i];
+    const itemLocation = item.getBoundingClientRect();
+
+    if (itemLocation.bottom >= vh || itemLocation.top <= vh) {
+      addAnimationDelay(item, galleryDelay, 'left-in');
+      galleryDelay += 150;
+    }
+  }
+
+  if (end >= food.length) {
+    showMoreButton.classList.add('disabled', 'opacity-none');
+  }
+}
+
+// Call initially
+makeGallery();

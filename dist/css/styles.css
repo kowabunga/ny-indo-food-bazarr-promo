@@ -36,6 +36,10 @@
     background-image: linear-gradient(to bottom left, #e55d87, #5fc3e4)
 }
 
+.no-border {
+    border-color: transparent;
+}
+
 .carousel-image-height {
     min-height: 550px;
     max-height: 550px;
@@ -89,7 +93,7 @@
 }
 
 .opacity-none {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
 .card-image-height {
@@ -100,6 +104,23 @@
 .gallery-card-image-height {
     height: 380px;
     width: 550px;
+}
+
+.bg-orange {
+    background-color: rgba(255, 51, 0, .575);
+}
+
+.bg-off-white {
+    background-color: #f6f8fa;
+}
+
+.why-us-img-height {
+    max-height: 17.5rem;
+}
+
+
+.why-us-min-height {
+    min-height: 31.25rem;
 }
 
 

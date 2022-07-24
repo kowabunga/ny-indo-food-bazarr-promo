@@ -1,12 +1,17 @@
 const joinUsNow = document.querySelector('#join-us-now');
+const whyUsCards = Array.from(document.querySelectorAll('.why-us-card'));
 const map = document.querySelector('#map');
 const eventTime = document.querySelector('#event-time');
 const menuRow = document.querySelector('#menu-row');
 const menuItems = Array.from(document.querySelectorAll('.menu-item'));
 let galleryItems = [];
 const footer = document.querySelector('#footer');
+
 // Fade in and out sections based on scroll position
 const vh = window.innerHeight;
+
+// Gallery item animation delay
+let galleryDelay = 150;
 
 window.addEventListener('scroll', () => {
   if (galleryItems.length === 0) {
@@ -49,12 +54,45 @@ window.addEventListener('scroll', () => {
     }
   });
 
+  whyUsCards.forEach((card, idx) => {
+    const cardLocation = card.getBoundingClientRect();
+
+    if (cardLocation.bottom >= vh || cardLocation.top <= vh) {
+      if (idx === 0) {
+        card.classList.add('fade-in');
+        card.classList.remove('opacity-none');
+      }
+      if (idx === 1) {
+        setTimeout(
+          () => {
+            card.classList.add('fade-in');
+            card.classList.remove('opacity-none');
+          },
+          250,
+          card
+        );
+      }
+
+      if (idx === 2) {
+        setTimeout(
+          () => {
+            card.classList.add('fade-in');
+            card.classList.remove('opacity-none');
+          },
+          500,
+          card
+        );
+      }
+    }
+  });
+
   galleryItems.forEach(item => {
     const itemLocation = item.getBoundingClientRect();
 
     if (itemLocation.top <= vh) {
-      item.classList.add('left-in');
-      item.classList.remove('opacity-none');
+      addAnimationDelay(item, galleryDelay, 'left-in');
+      galleryDelay += 150;
+      if (galleryDelay >= 750) galleryDelay = 150;
     }
   });
 
@@ -62,50 +100,25 @@ window.addEventListener('scroll', () => {
     footer.classList.add('bottom-up');
     footer.classList.remove('opacity-none');
   }
+});
 
-  //   Remove fade so it can be applied again!
-  if (joinUsNowLocation.top > vh || joinUsNowLocation.bottom <= 0) {
-    joinUsNow.classList.remove('top-down');
-    joinUsNow.classList.add('opacity-none');
-  }
+window.addEventListener('DOMContentLoaded', () => {
+  whyUsCards.forEach((card, idx) => {
+    const cardLocation = card.getBoundingClientRect();
 
-  if (mapLocation.top > vh || mapLocation.bottom <= 0) {
-    map.classList.remove('fade-in');
-    map.classList.add('opacity-none');
-  }
+    if (cardLocation.bottom >= vh || cardLocation.top <= vh) {
+      if (idx === 0) {
+        addAnimationDelay(card, 250, 'fade-in');
+      }
+      if (idx === 1) {
+        addAnimationDelay(card, 500, 'fade-in');
+      }
 
-  if (eventTimeLocation.top > vh || eventTimeLocation.bottom <= 0) {
-    eventTime.classList.remove('right-in');
-    eventTime.classList.add('opacity-none');
-  }
-
-  if (menuRowLocation.top > vh || menuRowLocation.bottom <= 0) {
-    menuRow.classList.remove('left-in');
-    menuRow.classList.add('opacity-none');
-  }
-
-  menuItems.forEach(item => {
-    const itemLocation = item.getBoundingClientRect();
-
-    if (itemLocation.top > vh || itemLocation.bottom <= 0) {
-      item.classList.remove('bottom-up');
-      item.classList.add('opacity-none');
+      if (idx === 2) {
+        addAnimationDelay(card, 750, 'fade-in');
+      }
     }
   });
-
-  galleryItems.forEach(item => {
-    const itemLocation = item.getBoundingClientRect();
-
-    if (itemLocation.top > vh || itemLocation.bottom <= 0) {
-      item.classList.remove('left-in');
-      item.classList.add('opacity-none');
-    }
-  });
-
-  // if (footerLocation.top > vh || footerLocation.bottom <= 0) {
-  //   footer.classList.remove('bottom-up');
-  //   footer.classList.add('opacity-none');
-  // }
 });
 
 window.addEventListener('onload', () => {
@@ -115,6 +128,12 @@ window.addEventListener('onload', () => {
 
   if (galleryItems.length === 0) {
     galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  }
+
+  if (itemLocation.top <= vh) {
+    addAnimationDelay(item, galleryDelay, 'left-in');
+    galleryDelay += 150;
+    if (galleryDelay >= 750) galleryDelay = 150;
   }
 
   if (joinUsNowLocation.bottom >= vh) {
@@ -131,22 +150,15 @@ window.addEventListener('onload', () => {
     eventTime.classList.add('right-in');
     eventTime.classList.remove('opacity-none');
   }
-
-  menuItems.forEach(item => {
-    const itemLocation = item.getBoundingClientRect();
-
-    if (itemLocation.bottom >= vh) {
-      item.classList.add('opacity-none');
-      item.classList.remove('bottom-up');
-    }
-  });
-
-  galleryItems.forEach(item => {
-    const itemLocation = item.getBoundingClientRect();
-
-    if (itemLocation.top <= vh) {
-      item.classList.add('opacity-none');
-      item.classList.remove('left-in');
-    }
-  });
 });
+
+function addAnimationDelay(element, delay, animation) {
+  setTimeout(
+    () => {
+      element.classList.add(animation);
+      element.classList.remove('opacity-none');
+    },
+    delay,
+    element
+  );
+}
