@@ -26,7 +26,7 @@ window.addEventListener('scroll', () => {
 
   //   Add fade in animation when bottom of element passes bottom of window viewport (minus a little bit)
   if (joinUsNowLocation.top <= vh) {
-    joinUsNow.classList.add('top-down');
+    joinUsNow.classList.add('fade-in');
     joinUsNow.classList.remove('opacity-none');
   }
 
